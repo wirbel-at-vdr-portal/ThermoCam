@@ -225,7 +225,7 @@ end;
 
 procedure TForm1.FormDestroy(Sender: TObject);
 begin
-  GroupBox_Scale.Free;
+  Scaler.Free;
   PNG.Free;
 end;
 
@@ -247,16 +247,16 @@ end;
 
 procedure setRGB(dest:puint8; src:uint16);
 var
-  r,GroupBox_Scale,b:puint8;
+  r,g,b:puint8;
 begin
   r := dest;
-  GroupBox_Scale := dest+1;
+  g := dest+1;
   b := dest+2;
 
   b^ := (src and $1F) shl 3; // 5bits Blue
   src := src shr 5;
 
-  GroupBox_Scale^ := (src and $3F) shl 2; // 6Bits Green
+  g^ := (src and $3F) shl 2; // 6Bits Green
   src := src shr 6;
 
   r^ := (src and $1F) shl 3; // 5Bits Red
