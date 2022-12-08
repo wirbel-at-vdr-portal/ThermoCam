@@ -81,9 +81,13 @@ The files are stored in the subfolder thermal.
      0001.rdf
      0002.rdf
 ```
+### The Image Converter Tool
 
+![alt text](doc/TDIC.png)
 
-
+The image converter tool converts the files on SD card to a Portable Network Graphic (PNG) file.
+You may change the pixel resolution, temperature min and max and upscaling algorithm.
+Change of heat map could be easily done here too, but is not yet implemented.
 
 
 
