@@ -90,5 +90,21 @@ You may change the pixel resolution, temperature min and max and upscaling algor
 Change of heat map could be easily done here too, but is not yet implemented.
 
 
+## License Topics
+* the following files are from Melexis and covered by Apache License 2.0, see header inside.
+  ** MLX90640_API.h
+  ** MLX90640_API.cpp
+  ** MLX90640_I2C_Driver.h
+  ** MLX90640_I2C_Driver.cpp
+  
+* the following files relate to https://github.com/wirbel-at-vdr-portal/M5CoreDisplay, for licensing pls lookup there
+  ** gfxfont.h
+  ** glcdfont.c
+  ** ILI934x.h
+  ** M5CoreDisplay.cpp
+  ** M5CoreDisplay.h
+  ** M5CoreSetup.h
+  
+* any other file here relates to the MIT License.
 
 --Winfried
