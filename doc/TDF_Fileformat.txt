@@ -1,0 +1,49 @@
+The following describes the tdf fileformat used in this project.
+https://github.com/wirbel-at-vdr-portal/ThermoCam
+
+
+
+
+------- SYNTAX --------|-No. of bits-|-------Identifier----------------------------               
+tdf(){
+   TDF_indentifier[4]  | 4x8 char    | {'T','D','F','\0'} or {0x54, 0x44, 0x46, 0x00}
+
+   width_LSB           |   8 ui      | {0x20}, see width
+   width_MSB           |   8 ui      | {0x00}, see width
+
+   height_LSB          |   8 ui      | {0x18}, see height
+   height_MSB          |   8 ui      | {0x00}, see height
+
+   for (i=0;i<(width*height);i++){
+       pixel           |  32 single  | temperature pixel, IEEE754 single
+   }
+}
+
+
+ui     -  unsigned integer
+single -  4 byte single float number, 7 decimal digits precision
+
+
+Semantics:
+--------------------------------------------------------------------------------
+TDF_indentifier:
+  expands to const char* "TDF" as file format marker.
+
+width:
+  Describes the width of one row of the pixel data, point [0,0] is upper left.
+  uint16_t width = (width_MSB << 8) | width_LSB;
+  NOTE:
+     For this MLX90640 project always 32.
+
+height:
+  Describes the height of one column of the pixel data, point [0,0] is upper left.
+  uint16_t height = (height_MSB << 8) | height_LSB;
+  NOTE:
+     For this MLX90640 project always 24.
+
+pixel:
+  One temperature pixel in degree celsius.
+  The file contains (width x height) pixels following the header.
+  NOTE:
+     For this MLX90640 project always (32*24) = 768 pixels.
+     For this MLX90640 project always in range -40.0f .. +300.0f
