@@ -17,7 +17,9 @@ And the M5 Core Basic doesnt have external RAM. Therefore, upscaling is done in 
 for different purposes. But, this again takes away a bit of cpu time.
 
 In the image below, there is a comparison of different upscaling algorithms on the same (real) temperature data.
+
 ![alt text](doc/Interpolation.png)
+
 In this project, bicubic upscale is used, see right picture.
 
 
