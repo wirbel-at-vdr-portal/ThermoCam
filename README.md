@@ -7,6 +7,8 @@ This is a tiny thermal Imager using the [M5 Core BASIC](https://docs.makerfactor
 The MLX90640 thermal sensor provides 32x24px thermal data, so the visible image needs to upscaled to a larger image size,
 to fit the displays resolution of 320x240.
 
+![alt text](doc/M5.png)
+
 As the ESP32 inside the M5 Core is very limited in floating point performance, both the recreation of the
 thermal data and the upscaling takes a lot of time. Still, a refresh rate of slightly more than 3Hz is possible.
 
